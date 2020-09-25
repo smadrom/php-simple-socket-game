@@ -35,10 +35,6 @@ class Client
 
             $message = $this->read();
 
-            if (strpos('Game end', $message) === true) {
-                $this->close();
-            }
-
             $this->message($message);
         }
     }

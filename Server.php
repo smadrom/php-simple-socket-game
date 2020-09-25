@@ -31,8 +31,6 @@ class Server
     {
         $this->ip = $ip;
         $this->port = $port;
-
-        set_time_limit(0);
     }
 
     public function run(): void
@@ -187,10 +185,6 @@ class Server
         }
 
         $buffer = trim($buffer);
-
-        if ($buffer === false) {
-            throw new RuntimeException('Socket read error: ' . $this->getError());
-        }
 
         return $buffer;
     }
